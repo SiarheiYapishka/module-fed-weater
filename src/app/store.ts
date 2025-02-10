@@ -1,4 +1,4 @@
-import { createAction, createReducer, on } from "@ngrx/store";
+import { createAction, createReducer, createSelector, on } from "@ngrx/store";
 
 export const nkvAction = createAction('test');
 
@@ -9,3 +9,4 @@ export const nkvReducer = createReducer({
 },
 on(nkvAction, (store: any) => ({...store, order: [1,2,3,4]})));
 
+export const nkvSelector = createSelector((state) => state, state => state);
