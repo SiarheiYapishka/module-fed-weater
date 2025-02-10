@@ -19,6 +19,7 @@ interface AbstractAddAlertButtonComponent {
   selector: 'wx-weather-widget',
   templateUrl: './weather-widget.component.html',
   styleUrls: ['./weather-widget.component.scss'],
+  standalone: false
 })
 export class WeatherWidgetComponent {
   componentRef: ComponentRef<any> | undefined;

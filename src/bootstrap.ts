@@ -6,9 +6,14 @@ import { AppComponent } from './app/app.component';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { provideRouter } from '@angular/router';
 import { routes } from './app/routes';
+import { provideStoreDevtools } from '@ngrx/store-devtools';
+import { provideStore } from '@ngrx/store';
+import { nkvReducer } from './app/store';
+import { MainComponent } from './app/main.component';
 
 if (environment.production) {
   enableProdMode();
 }
 console.log('AAAAAAAAAAAA')
-bootstrapApplication(AppComponent, {providers: [provideRouter(routes)]}).catch(err => console.error(err));
+bootstrapApplication(MainComponent, {providers: [provideRouter(routes), provideStoreDevtools()]}).catch(err => console.error(err));
+ 

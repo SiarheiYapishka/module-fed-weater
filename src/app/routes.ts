@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { AppComponent } from './app.component';
+import { MainComponent } from './main.component';
 export const routes: Routes = [
   {
     path: '',

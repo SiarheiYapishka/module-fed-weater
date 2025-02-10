@@ -6,7 +6,7 @@ import { WeatherWidgetRoutingModule } from './weather-widget-routing.module';
 import { WeatherWidgetComponent } from './weather-widget.component';
 
 @NgModule({
-  declarations: [WeatherWidgetComponent, AdDirective],
-  imports: [CommonModule, WeatherWidgetRoutingModule, FormsModule],
+  declarations: [WeatherWidgetComponent],
+  imports: [CommonModule, WeatherWidgetRoutingModule, FormsModule, AdDirective],
 })
 export class WeatherWidgetModule {}

@@ -7,5 +7,5 @@ export const nkvReducer = createReducer({
     preorder: {},
     items: {},
 },
-on(nkvAction, (store) => ({...store, order: [1,2,3,4]})));
+on(nkvAction, (store: any) => ({...store, order: [1,2,3,4]})));
 
