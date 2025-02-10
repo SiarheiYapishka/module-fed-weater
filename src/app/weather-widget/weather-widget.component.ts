@@ -8,6 +8,7 @@ import {
 import { environment } from 'src/environments/environment';
 import { DummyComponent } from '../dummy/dummy.component';
 import { AdDirective } from './ad.directive';
+import { SharedService } from '@ng-mf/shared';
 
 interface AbstractAddAlertButtonComponent {
   location: string;
@@ -25,15 +26,16 @@ export class WeatherWidgetComponent {
   locationToSearch = '';
   location = '';
 
-  constructor(private componentFactoryResolver: ComponentFactoryResolver) {}
+  constructor(private componentFactoryResolver: ComponentFactoryResolver, private readonly sharedService: SharedService) {}
 
   async seaerch() {
+    this.sharedService.setUserName()
     this.locationToSearch = this.location;
     try {
       await this.createComponent();
     } catch {
       if (!environment.production) {
-        this.createDummyComponent();
+        // this.createDummyComponent();
       }
     }
   }
@@ -61,14 +63,14 @@ export class WeatherWidgetComponent {
     this.componentRef.instance.type = 'weather';
   }
 
-  async createDummyComponent() {
-    const componentFactory =
-      this.componentFactoryResolver.resolveComponentFactory(DummyComponent);
+  // async createDummyComponent() {
+  //   const componentFactory =
+  //     this.componentFactoryResolver.resolveComponentFactory(DummyComponent);
 
-    const viewContainerRef = this.adHost.viewContainerRef;
-    viewContainerRef.clear();
+  //   const viewContainerRef = this.adHost.viewContainerRef;
+  //   viewContainerRef.clear();
 
-    this.componentRef =
-      viewContainerRef.createComponent<DummyComponent>(componentFactory);
-  }
+  //   this.componentRef =
+  //     viewContainerRef.createComponent<DummyComponent>(componentFactory);
+  // }
 }
