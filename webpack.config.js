@@ -17,7 +17,7 @@ module.exports = {
       name: "ngMfWeather",
       filename: "remoteEntry.js",
       exposes: {
-        "./Routes": "./src/app/app/routes.ts",
+        "./Routes": "./src/app/routes.ts",
       },
       shared: {
         "@angular/core": { singleton: true, strictVersion: false, requiredVersion: "auto" },

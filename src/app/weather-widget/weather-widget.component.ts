@@ -29,7 +29,6 @@ export class WeatherWidgetComponent {
   constructor(private componentFactoryResolver: ComponentFactoryResolver, private readonly sharedService: SharedService) {}
 
   async seaerch() {
-    this.sharedService.setUserName()
     this.locationToSearch = this.location;
     try {
       await this.createComponent();
